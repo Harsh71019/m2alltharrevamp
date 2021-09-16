@@ -1,6 +1,94 @@
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
+    .grid4-parent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+    }
+
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20vh);
+        visibility: hidden;
+        transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+        will-change: opacity, visibility;
+    }
+
+    .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+    }
+
+    .container-grid {
+        position: relative;
+    }
+
+    .flex-cont-img {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 2px;
+        grid-row-gap: 0px;
+    }
+
+    .title3 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .item {
+        flex-grow: 1;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .item3 {
+        flex-grow: 1;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 12px;
+        border: 5px solid rgba(209, 213, 219, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .item+.item {
+        margin-left: 5%;
+    }
+
+    .car-block {
+        position: absolute;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        top: 60%;
+        left: 35%;
+        transform: translate(-60%, -35%);
+        z-index: 3;
+    }
+
+    .card-block {
+        position: absolute;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        top: 70%;
+        left: 82%;
+        transform: translate(-70%, -82%);
+        width: 50vw;
+
+    }
+
     .grid-1-new {
         display: grid;
         grid-template-columns: 1fr;
@@ -16,285 +104,9 @@
         text-align: center;
     }
 
-    .buttontoimagecontainer {
-        position: relative;
-    }
-
-    .shrink-down img {
-        transition: 1s ease;
-    }
-
-    .shrink-down img:hover {
-        -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-        transform: scale(0.95);
-        transition: 1s ease;
-    }
-
-    .buttonredshopnow {
-        position: absolute;
-        top: 85%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        color: white !important;
-        background: #e21d38;
-        border-radius: 5px;
-        padding: 5px 15px;
-        font-size: 20px;
-        text-transform: uppercase;
-        margin: auto;
-        font-weight: bolder;
-    }
-
-    .buttonredshopnow2 {
-        position: absolute;
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        color: white !important;
-        background: #e21d38;
-        border-radius: 5px;
-        padding: 5px 15px;
-        font-size: 20px;
-        text-transform: uppercase;
-        margin: auto;
-        font-weight: bolder;
-    }
-
-    .marginlptop {
-        margin-top: 20px;
-    }
-
-    .widthundred {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .stretchimage {
-        width: 100%;
-    }
-
-    .image-round {
-        border-radius: 50%;
-        width: 250px;
-        height: 250px;
-    }
-
-    .fontsizedw {
-        text-align: center;
-        margin-top: 10px;
-        font-weight: bold;
-        font-size: 16px;
-        letter-spacing: 5px;
-    }
-
-    .card-imagetop1 {
-        transition: 0.3s;
-        width: 410px;
-        height: 150px;
-        position: absolute;
-        bottom: 2px;
-        left: 10%;
-        background-color: white;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-
-    .card-imagetop1mobile {
-        transition: 0.3s;
-        position: absolute;
-        bottom: 2px;
-        left: 2%;
-        background-color: white;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        width: 96%;
-    }
-
-    .paddingsmallimg1 {
-        padding: 30px;
-    }
-
-    .borderad7 {
-        /* border-radius: 10px; */
-    }
-
-    .car-name-carousel {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 20px;
-        font-family: "Roboto Condensed", sans-serif;
-        margin-bottom: 0;
-        font-weight: bolder;
-    }
-
     .mb0 {
         margin-bottom: 0;
     }
-
-    /* .card:hover {
-              box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-              } */
-
-    .card-bodyimagetop1 {
-        padding: 10px;
-    }
-
-    .container-image-top {
-        position: relative;
-    }
-
-    .btn-shop1 {
-        color: white;
-        background-color: #e21d38;
-        outline: none;
-        border: none;
-        text-transform: uppercase;
-        border-radius: 9px;
-        font-weight: bolder;
-        letter-spacing: 2px;
-        font-size: 14px;
-        padding: none;
-    }
-
-    .cardmain4 {
-        border-radius: 15px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-    }
-
-    .cardmain4:hover {
-        border-radius: 15px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .textheader1 {
-        font-family: "Roboto Condensed", sans-serif;
-        color: #706667;
-        font-size: 25px;
-    }
-
-    .hbigscreen {
-        display: none;
-    }
-
-    .hsmallscreen {
-        display: block;
-    }
-
-    .column4des {
-        float: left;
-        width: 25%;
-    }
-
-    /* Clear floats after the columns */
-    .row4coldes:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    .paddingsmallimg2 {
-        margin: 10px;
-    }
-
-    .scrolling-wrapper-flexbox {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .cardscrollforwrapper {
-        flex: 0 0 auto;
-        border-right: 1px solid #cccccc;
-        width: 300px;
-        padding: 10px;
-    }
-
-    #style-3::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        background-color: #f5f5f5;
-    }
-
-    #style-3::-webkit-scrollbar {
-        width: 12px;
-        height: 10px;
-        background-color: #f5f5f5;
-    }
-
-    #style-3::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: #d62929;
-    }
-
-    .mt-30 {
-        margin-top: 10px;
-    }
-
-    .mb-30 {
-        margin-bottom: 30px;
-    }
-
-    .headingstyleslpaccnew {
-        font-weight: bold;
-        font-size: 16px;
-        letter-spacing: 5px;
-        background-color: #706667;
-        color: #f5f5f5;
-        padding: 10px;
-    }
-
-    .ml2 {
-        margin-left: 20px;
-    }
-
-    .ml25 {
-        margin-left: 29px;
-    }
-
-    .mt-15 {
-        margin-top: 20px;
-    }
-
-    .mt10p {
-        margin-top: 5px;
-    }
-
-    .margintop50px {
-        margin-top: 50px;
-    }
-
-    .margintop55px {
-        margin-top: 55px;
-    }
-
-    .marginbottom70px {
-        margin-bottom: 70px;
-    }
-
-    .padding-container {
-        margin-right: 150px;
-        margin-left: 150px;
-    }
-
-    .paddingsmalldevices {
-        padding: 10px;
-    }
-
-    .scale2coldown {
-        width: 480px;
-    }
-
-    .imagecontain {
-        display: block;
-        width: 230px;
-        height: 230px;
-    }
-
 
     .hbigscreen {
         display: none;
@@ -308,152 +120,119 @@
         width: 100%;
     }
 
-    @media screen and (max-width: 768px) {
-
-
-        .hbigscreen {
-            display: block;
-        }
-
-        .hsmallscreen {
-            display: none;
-        }
-
-        .scale2coldown {
-            width: 100%;
-        }
-
-        .headingstyleslpaccnew {
-            font-weight: bold;
-            font-size: 16px;
-            letter-spacing: 5px;
-            text-align: center;
-        }
-
-        .padding-container {
-            margin-right: 0px;
-            margin-left: 0px;
-        }
-
-        .ml25 {
-            margin-left: 0px;
-        }
-
-        #style-3::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hsmallscreen {
-            display: none;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hbigscreen {
-            display: block;
-        }
-
-        .textheader1 {
-            text-align: center;
-        }
-
-        .image-round {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-
-        .fontsizedw {
-            font-size: 12px;
-        }
-
-        .card-imagetop1 {
-            width: 300px;
-            left: 10%;
-        }
-
-        .column4des {
-            float: left;
-            width: 50% !important;
-        }
-
-        .paddingsmallimg1 {
-            padding: 5px;
-        }
-
-        .paddingsmallimg2 {
-            margin: 10px;
-        }
-
-        .buttonredshopnow {
-            position: absolute;
-            top: 85%;
-            width: 100px;
-            left: 75%;
-            font-size: 16px;
-        }
-
-        .buttonredshopnow2 {
-            position: absolute;
-            top: 100%;
-            width: 100px;
-            font-size: 16px;
-        }
+    .makeblack {
+        color: black;
     }
 
-    @media screen and (max-width: 587px) {
-        .imagecontain {
-            width: 150px;
-            height: 150px;
-        }
+    .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
-    @media screen and (max-width: 500px) {
-        .imagecontain {
-            max-width: inherit;
-        }
-
-        .margintop50px {
-            margin-top: 30px;
-        }
-
-        .ml2 {
-            margin-left: 0px;
+    @media only screen and (max-width: 600px) {
+        .grid4-parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
         }
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Document</title>
+</head>
 
-<div class="grid-1-new">
-    <a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame1.png" alt="" />
-    </a>
-</div>
-<div class="grid-1-new">
-    <a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame2.png" alt="" />
-    </a>
-</div>
-<div class="grid--new"><a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame3.png" alt="" />
-    </a>
-</div>
-<div class="grid--new"><a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame4.png" alt="" />
-    </a>
-</div>
-<div class="grid--new"><a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame5.png" alt="" />
-    </a>
-</div>
-<div class="grid--new"><a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame6.png" alt="" />
-    </a>
-</div>
-<div class="grid--new"><a>
-        <img class="centerimageslp imghundredpercent" src="./images/Frame7.png" alt="" />
-    </a>
-</div>
+<body>
+    <div class="grid-1-new">
+        <a class="container-grid">
+            <img class="centerimageslp imghundredpercent" src="./images/Frame1.png" alt="" />
+        </a>
+    </div>
+    <div class="grid-1-new">
+        <a class="container-grid">
+            <img class="centerimageslp imghundredpercent" src="./images/Frame2.png" alt="" />
+            <div class="car-block">
+                <div class="img-tharcont">
+                    <img src="./images/tharcss.png" class="imghundredpercent " data-aos="fade-down" />
+                </div>
+
+            </div>
+            <div class="card-block">
+                <div class="flex-cont-img">
+                    <div class="item">
+                        <img src="./images/3_1.webp" class="imghundredpercent" />
+                        <p class="makeblack">Thar Dark Lord Pack</p>
+                        <h3 class="makeblack my-0"> ₹28,275.00</h3>
+
+                    </div>
+                    <div class="item">
+                        <img src="./images/3_2.webp" class="imghundredpercent" />
+                        <p class="makeblack">Thar Front Bumper Cladding</p>
+                        <h3 class="makeblack my-0"> ₹4,190.00</h3>
+                    </div>
+                    <div class="item"> <img src="./images/3_3.webp" class="imghundredpercent" />
+                        <p class="makeblack">Thar Wheel Arch Cladding</p>
+                        <h3 class="makeblack my-0"> ₹6,160.00</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="grid--new">
+        <h1 class="title3">Most thar explorers own this</h1>
+        <div class="grid4-parent">
+            <div class="item3">
+                <img src="./images/3_1.webp" class="imghundredpercent" />
+                <p class="makeblack">Thar Dark Lord Pack</p>
+                <h3 class="makeblack my-0"> ₹28,275.00</h3>
+            </div>
+            <div class="item3">
+                <img src="./images/3_1.webp" class="imghundredpercent" />
+                <p class="makeblack">Thar Dark Lord Pack</p>
+                <h3 class="makeblack my-0"> ₹28,275.00</h3>
+            </div>
+            <div class="item3">
+                <img src="./images/3_1.webp" class="imghundredpercent" />
+                <p class="makeblack">Thar Dark Lord Pack</p>
+                <h3 class="makeblack my-0"> ₹28,275.00</h3>
+            </div>
+            <div class="item3">
+                <img src="./images/3_1.webp" class="imghundredpercent" />
+                <p class="makeblack">Thar Dark Lord Pack</p>
+                <h3 class="makeblack my-0"> ₹28,275.00</h3>
+            </div>
+        </div>
+    </div>
+    <div class="grid--new"><a>
+            <img class="centerimageslp imghundredpercent" src="./images/Frame4.png" alt="" />
+        </a>
+    </div>
+    <div class="grid--new"><a>
+            <img class="centerimageslp imghundredpercent" src="./images/Frame5.png" alt="" />
+        </a>
+    </div>
+    <div class="grid--new"><a>
+            <img class="centerimageslp imghundredpercent" src="./images/Frame6.png" alt="" />
+        </a>
+    </div>
+    <div class="grid--new"><a>
+            <img class="centerimageslp imghundredpercent" src="./images/Frame7.png" alt="" />
+        </a>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+<script>
+    AOS.init();
+</script>
+
+</html>
