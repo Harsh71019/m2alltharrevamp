@@ -2,6 +2,9 @@
     @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
+
+
+
     .scrolling-wrapper-flexbox {
         display: flex;
         flex-wrap: nowrap;
@@ -25,7 +28,22 @@
         color: white;
         font-family: 'Oswald', sans-serif;
         font-weight: 700;
-        font-size: 30px;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .section4-heading2 {
+        position: absolute;
+        text-transform: uppercase;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
         width: 100%;
         text-align: center;
     }
@@ -34,6 +52,20 @@
         flex: 0 0 auto;
         border-right: 1px solid #cccccc;
         width: 300px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .scrollsec {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .scroll4div {
+        flex: 0 0 auto;
+        border-right: 1px solid #cccccc;
+        width: 100%;
         padding: 10px;
         border-radius: 12px;
     }
@@ -82,12 +114,13 @@
 
     .offset-text {
         position: absolute;
-        top: 70%;
+        top: 75%;
         left: 70%;
         transform: translate(-50%, -50%);
         color: white;
         font-size: 20px;
         line-height: 70px;
+        font-family: 'Oswald', sans-serif;
     }
 
     .heading1 {
@@ -119,6 +152,7 @@
         padding: 30px;
     }
 
+
     @media only screen and (max-width: 600px) {
         .imgback {}
 
@@ -127,6 +161,10 @@
         }
 
         .hidesmallscreen {
+            display: none;
+        }
+
+        #style-3::-webkit-scrollbar {
             display: none;
         }
 
@@ -150,9 +188,8 @@
 
     </a>
     <a class="container-main hidebigscreen">
-        <img src="./images/Frame1Mobile.png" class="imgback " />
-        <h1 class="center-text heading1">Explore the Impossible</h1>
-        <p class="offset-text">Shop Now</p>
+        <img src="./images/Frame1Mobile.png" class="imgback" />
+        <p class="offset-text">Shop Now ></p>
     </a>
 </div>
 
@@ -160,7 +197,7 @@
 <div class="onecolgrid lightbrown">
     <h1 class="primary-heading">Shop The Look</h1>
 
-    <div class="scrolling-wrapper-flexbox">
+    <div class="scrolling-wrapper-flexbox" id="scrolling-wrapper-flexbox">
         <div class="cardscrollforwrapper">
             <a> <img src="./images/3_1.webp" class="imgback"></a>
         </div>
@@ -188,26 +225,31 @@
     </a>
     <a class="hidebigscreen container-main">
         <img src="./images/Frame2Mobile.png" class="imgback hidebigscreen" />
-        <h1 class="section4-heading">Your Thar Your Way</h1>
+        <h1 class="section4-heading">Your Thar </h1>
+        <h1 class="section4-heading2"> Your Way</h1>
         <div class="blockonimage">
-            <div class="grid2mobile">
-                <img src="./images/sillprotectormobile.png" class="imgback" />
-                <img src="./images/snacktraymobile.png" class="imgback" />
-                <img src="./images/seatcovermobile.png" class="imgback" />
-                <img src="./images/steeringcovermobile.png" class="imgback" />
-                <!-- <a>
-                    
-                </a>
-                <a>
-                  
-                </a> -->
-                <!-- <a>
-                    <img src="./images/sillprotectormobile.png" class="imgback" />
-                </a>
-                <a>
-                    <img src="./images/sillprotectormobile.png" class="imgback" />
-                </a> -->
+            <div class="scrollsec" id="scrollsec">
+                <div class="scroll4div">
+                    <div class="grid2mobile">
+                        <img src="./images/sillprotectormobile.png" class="imgback" />
+                        <img src="./images/snacktraymobile.png" class="imgback" />
+                        <img src="./images/seatcovermobile.png" class="imgback" />
+                        <img src="./images/steeringcovermobile.png" class="imgback" />
+                    </div>
+                </div>
+                <div class="scroll4div">
+                    <div class="grid2mobile">
+                        <img src="./images/sillprotectormobile.png" class="imgback" />
+                        <img src="./images/snacktraymobile.png" class="imgback" />
+                        <img src="./images/seatcovermobile.png" class="imgback" />
+                        <img src="./images/steeringcovermobile.png" class="imgback" />
+                    </div>
+                </div>
             </div>
+
+            <button type="button" onclick="slide('left')">Prev</button>
+            <button type="button" onclick="slide('right')">Next</button>
+
         </div>
     </a>
 </div>
@@ -252,7 +294,7 @@
         <img src="./images/Frame3.png" class="imgback hidesmallscreen" />
     </a>
     <a>
-        <img src="./images/Frame3Mobile.png" class="imgback hidebigscreen" />
+        <img src="./images/Frame6Mobile.png" class="imgback hidebigscreen" />
     </a>
 </div>
 
@@ -263,6 +305,22 @@
 </body>
 <script>
     AOS.init();
+    function slide(direction) {
+        var container = document.getElementById('scrollsec');
+        scrollCompleted = 0;
+        var slideVar = setInterval(function () {
+            if (direction == 'left') {
+                container.scrollLeft -= 40;
+            } else {
+                container.scrollLeft += 40;
+            }
+            scrollCompleted += 10;
+            if (scrollCompleted >= 100) {
+                window.clearInterval(slideVar);
+            }
+        }, 50);
+    }
+
 </script>
 
 </html>
