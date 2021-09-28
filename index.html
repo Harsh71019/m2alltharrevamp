@@ -2,238 +2,132 @@
     @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-    .pattern {
-        position: relative;
-        background-color: #ddd0b9;
-
+    .scrolling-wrapper-flexbox {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 
-    .pattern:before {
-        content: "";
+    .grid2mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        padding: 20px;
+    }
+
+    .section4-heading {
         position: absolute;
-        bottom: 0;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cardscrollforwrapper {
+        flex: 0 0 auto;
+        border-right: 1px solid #cccccc;
+        width: 300px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+
+
+    .onecolgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .imgback {
+        width: 100%;
+    }
+
+    .hidesmallscreen {
+        display: block;
+    }
+
+    .hidebigscreen {
+        display: none;
+    }
+
+    .container-main {
+        position: relative;
+    }
+
+    .center-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+
+    .blockonimage {
+        position: absolute;
+        top: 20%;
         left: 0;
         width: 100%;
-        height: 250px;
-        background: url(./images/wave.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
+        height: 100%;
     }
 
-
-    .imghundredpercentbackground {
-        width: 100%;
+    .offset-text {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        line-height: 70px;
     }
 
-    .addingborderimage {
-        border: 5px solid #33302f;
-        border-radius: 15px;
+    .heading1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 70px;
     }
 
     .darkbrown {
         background: #33302f;
+
     }
 
     .lightbrown {
         background: #ddd0b9;
+
     }
 
-    .view-more {
-        text-align: center;
+    .primary-heading {
         font-family: 'Oswald', sans-serif;
-        color: white;
-        font-size: 30px;
-        font-weight: 600;
-        margin-top: 30px;
-        margin-bottom: 0px;
-    }
-
-    .section4 {
-        padding: 100px 20px;
-        border-radius: 12px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .view-more-brown {
-        text-align: center;
-        font-family: 'Oswald', sans-serif;
-        color: #33302f;
-        font-size: 30px;
-        font-weight: 600;
-        margin-top: 30px;
-        margin-bottom: 0px;
-
-    }
-
-    .grid4-parent {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 20px;
-        grid-row-gap: 0px;
-    }
-
-    .grid4-parent {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 20px;
-        grid-row-gap: 0px;
-    }
-
-    .fade-in-section {
-        opacity: 0;
-        transform: translateY(20vh);
-        visibility: hidden;
-        transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-        will-change: opacity, visibility;
-    }
-
-    .fade-in-section.is-visible {
-        opacity: 1;
-        transform: none;
-        visibility: visible;
-    }
-
-    .container-grid {
-        position: relative;
-    }
-
-    .flex-cont-img {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 2px;
-        grid-row-gap: 0px;
-    }
-
-    .title3 {
         text-transform: uppercase;
+        color: #33302f;
+        font-size: 20px;
         text-align: center;
     }
 
-    .item {
-        flex-grow: 1;
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        background-color: rgba(255, 255, 255, 0.75);
-        border-radius: 12px;
-        border: 1px solid rgba(209, 213, 219, 0.3);
-        border-radius: 15px;
-        padding: 20px;
-    }
-
-    .item3 {
-        flex-grow: 1;
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        background-color: rgba(255, 255, 255, 0.75);
-        border-radius: 12px;
-        border: 5px solid rgba(209, 213, 219, 0.3);
-        border-radius: 15px;
-        padding: 20px;
-    }
-
-    .item+.item {
-        margin-left: 5%;
-    }
-
-    .car-block {
-        position: absolute;
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-        top: 60%;
-        left: 35%;
-        transform: translate(-60%, -35%);
-        z-index: 3;
-    }
-
-    .card-block {
-        position: absolute;
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-        top: 70%;
-        left: 82%;
-        transform: translate(-70%, -82%);
-        width: 50vw;
-    }
-
-    .centerthediv {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-block2 {
-        position: absolute;
-        margin-top: 100px;
-    }
-
-    /* .heightfixed {
-        height: 300px !important;
-    } */
-
-    .grid-1-new {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        grid-column-gap: px;
-        grid-row-gap: 0px;
-    }
-
-    .centerimageslp {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .mb0 {
-        margin-bottom: 0;
-    }
-
-    .hbigscreen {
-        display: none;
-    }
-
-    .hsmallscreen {
-        display: block;
-    }
-
-    .imghundredpercent {
-        width: 100%;
-    }
-
-    .makeblack {
-        color: black;
-    }
-
-    .my-0 {
-        margin-top: 0;
-        margin-bottom: 0;
+    .tharpad {
+        padding: 30px;
     }
 
     @media only screen and (max-width: 600px) {
-        .grid4-parent {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 20px;
-            grid-row-gap: 20px;
+        .imgback {}
+
+        .hidebigscreen {
+            display: block;
         }
 
-        .imghundredpercentbackground {
-            max-width: 100%;
-            height: 100%;
-        }
-
-
-        .section4 {
-            padding: 30px 20px;
-            border-radius: 12px;
+        .hidesmallscreen {
+            display: none;
         }
 
     }
@@ -247,118 +141,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Thar</title>
 </head>
 
+<div class="onecolgrid">
+    <a class="hidesmallscreen">
+        <img src="./images/Frame1.png" class="imgback " />
+
+    </a>
+    <a class="container-main hidebigscreen">
+        <img src="./images/Frame1Mobile.png" class="imgback " />
+        <h1 class="center-text heading1">Explore the Impossible</h1>
+        <p class="offset-text">Shop Now</p>
+    </a>
+</div>
+
+
+<div class="onecolgrid lightbrown">
+    <h1 class="primary-heading">Shop The Look</h1>
+
+    <div class="scrolling-wrapper-flexbox">
+        <div class="cardscrollforwrapper">
+            <a> <img src="./images/3_1.webp" class="imgback"></a>
+        </div>
+        <div class="cardscrollforwrapper">
+            <a> <img src="./images/3_1.webp" class="imgback"></a>
+        </div>
+        <div class="cardscrollforwrapper">
+            <a> <img src="./images/3_1.webp" class="imgback"></a>
+        </div>
+    </div>
+
+    <div class="tharpad">
+        <a class="">
+            <img src="./images/tharcss.png" class="imgback" />
+        </a>
+    </div>
+</div>
+
+
+
+
+<div class="onecolgrid">
+    <a class="hidesmallscreen">
+        <img src="./images/Frame2.png" class="imgback " />
+    </a>
+    <a class="hidebigscreen container-main">
+        <img src="./images/Frame2Mobile.png" class="imgback hidebigscreen" />
+        <h1 class="section4-heading">Your Thar Your Way</h1>
+        <div class="blockonimage">
+            <div class="grid2mobile">
+                <img src="./images/sillprotectormobile.png" class="imgback" />
+                <img src="./images/snacktraymobile.png" class="imgback" />
+                <img src="./images/seatcovermobile.png" class="imgback" />
+                <img src="./images/steeringcovermobile.png" class="imgback" />
+                <!-- <a>
+                    
+                </a>
+                <a>
+                  
+                </a> -->
+                <!-- <a>
+                    <img src="./images/sillprotectormobile.png" class="imgback" />
+                </a>
+                <a>
+                    <img src="./images/sillprotectormobile.png" class="imgback" />
+                </a> -->
+            </div>
+        </div>
+    </a>
+</div>
+
+
+<div class="onecolgrid lightbrown">
+    <h1 class="primary-heading">Exteriors Engineered for tough Terrains</h1>
+
+    <div class="grid2mobile">
+        <img src="./images/sillprotectormobile.png" class="imgback" />
+        <img src="./images/snacktraymobile.png" class="imgback" />
+        <img src="./images/seatcovermobile.png" class="imgback" />
+        <img src="./images/steeringcovermobile.png" class="imgback" />
+        <!-- <a>
+            
+        </a>
+        <a>
+          
+        </a> -->
+        <!-- <a>
+            <img src="./images/sillprotectormobile.png" class="imgback" />
+        </a>
+        <a>
+            <img src="./images/sillprotectormobile.png" class="imgback" />
+        </a> -->
+    </div>
+
+</div>
+
+
+
+<!-- <div class="onecolgrid">
+    <a>
+        <img src="./images/Frame2.png" class="imgback hidesmallscreen" />
+    </a>
+    <a>
+        <img src="./images/Frame2Mobile.png" class="imgback hidebigscreen" />
+    </a>
+</div> -->
+<div class="onecolgrid">
+    <a>
+        <img src="./images/Frame3.png" class="imgback hidesmallscreen" />
+    </a>
+    <a>
+        <img src="./images/Frame3Mobile.png" class="imgback hidebigscreen" />
+    </a>
+</div>
+
+
 <body>
-    <div class="grid-1-new">
-        <a class="container-grid">
-            <img class="centerimageslp imghundredpercentbackground" src="./images/Frame1.png" alt="" />
-        </a>
-    </div>
-    <div class="grid-1-new">
-        <a class="container-grid">
-            <img class="centerimageslp imghundredpercentbackground" src="./images/Frame2.png" alt="" />
-            <div class="car-block">
-                <div class="img-tharcont">
-                    <img src="./images/tharcss.png" class="imghundredpercent " data-aos="fade-down" />
-                </div>
 
-            </div>
-            <div class="card-block">
-                <div class="flex-cont-img">
-                    <div class="item">
-                        <img src="./images/3_1.webp" class="imghundredpercent" />
-                        <p class="makeblack">Thar Dark Lord Pack</p>
-                        <h3 class="makeblack my-0"> ₹28,275.00</h3>
-
-                    </div>
-                    <div class="item">
-                        <img src="./images/3_2.webp" class="imghundredpercent" />
-                        <p class="makeblack">Thar Front Bumper Cladding</p>
-                        <h3 class="makeblack my-0"> ₹4,190.00</h3>
-                    </div>
-                    <div class="item"> <img src="./images/3_3.webp" class="imghundredpercent" />
-                        <p class="makeblack">Thar Wheel Arch Cladding</p>
-                        <h3 class="makeblack my-0"> ₹6,160.00</h3>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="grid--new">
-        <h1 class="title3">Most thar explorers own this</h1>
-        <div class="grid4-parent">
-            <div class="item3">
-                <img src="./images/3_1.webp" class="imghundredpercent" />
-                <p class="makeblack">Thar Dark Lord Pack</p>
-                <h3 class="makeblack my-0"> ₹28,275.00</h3>
-            </div>
-            <div class="item3">
-                <img src="./images/3_1.webp" class="imghundredpercent" />
-                <p class="makeblack">Thar Dark Lord Pack</p>
-                <h3 class="makeblack my-0"> ₹28,275.00</h3>
-            </div>
-            <div class="item3">
-                <img src="./images/3_1.webp" class="imghundredpercent" />
-                <p class="makeblack">Thar Dark Lord Pack</p>
-                <h3 class="makeblack my-0"> ₹28,275.00</h3>
-            </div>
-            <div class="item3">
-                <img src="./images/3_1.webp" class="imghundredpercent" />
-                <p class="makeblack">Thar Dark Lord Pack</p>
-                <h3 class="makeblack my-0"> ₹28,275.00</h3>
-            </div>
-        </div>
-    </div>
-    <section class="darkbrown section4">
-        <div class="grid--new">
-            <div class="grid4-parent">
-                <div class=" centerthediv">
-                    <img src="./images/sill1.png" class="imghundredpercent" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/steering2.png" class="imghundredpercent" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/snack3.png" class="imghundredpercent" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/seat4.png" class="imghundredpercent" />
-                </div>
-            </div>
-            <p class="view-more">View More ></p>
-        </div>
-    </section>
-    <section class="pattern section4">
-        <div class="grid--new">
-            <div class="grid4-parent">
-                <div class=" centerthediv">
-                    <img src="./images/bug.png" class="imghundredpercent addingborderimage" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/wheel.png" class="imghundredpercent addingborderimage" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/sunshade.png" class="imghundredpercent addingborderimage" />
-                </div>
-                <div class=" centerthediv">
-                    <img src="./images/mud.png" class="imghundredpercent addingborderimage" />
-                </div>
-            </div>
-            <p class="view-more-brown">View More ></p>
-        </div>
-    </section>
-
-    <!-- <div class="grid--new"><a>
-            <img class="centerimageslp imghundredpercentbackground" src="./images/Frame6.png" alt="" />
-        </a>
-    </div>
-    <div class="grid--new"><a>
-            <img class="centerimageslp imghundredpercentbackground" src="./images/Frame7.png" alt="" />
-        </a>
-    </div> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 <script>
